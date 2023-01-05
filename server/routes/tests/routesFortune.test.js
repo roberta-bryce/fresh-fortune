@@ -27,3 +27,18 @@ describe('GET /api/v1/fortune', () => {
       })
   })
 })
+
+describe('POST /api/v1/fortune/add', () => {
+  test('adds a new fortune', () => {
+    db.addFortune.mockReturnValue(Promise.resolve([4]))
+    return request(server)
+      .post('/api/v1/fortune/add')
+      .send({ fortune: 'everything is working!' })
+      .then((res) => {
+        expect(res.status).toBe(200)
+        expect(db.addFortune).toHaveBeenCalledWith({
+          fortune: 'everything is working!',
+        })
+      })
+  })
+})

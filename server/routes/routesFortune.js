@@ -15,4 +15,20 @@ router.get('/', (req, res) => {
     })
 })
 
+//POST /api/v1/fortune/add
+router.post('/add', (req, res) => {
+  const fortune = req.body
+  const newFortune = {
+    fortune: fortune.fortune,
+  }
+  db.addFortune(newFortune)
+    .then((fortuneId) => {
+      res.json(fortuneId)
+    })
+    .catch((error) => {
+      console.log(error)
+      res.status(500).json({ message: 'Bad luck, something went wrong' })
+    })
+})
+
 module.exports = router
