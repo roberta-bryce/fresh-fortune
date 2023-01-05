@@ -7,7 +7,12 @@ function getFortunes(db = connection) {
 function addFortune(newFortune, db = connection) {
   return db('fortune').insert(newFortune)
 }
+
+function delFortune(id, db = connection) {
+  return db('fortune').where('id', id).delete()
+}
 module.exports = {
   getFortunes,
   addFortune,
+  delFortune,
 }

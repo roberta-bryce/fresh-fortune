@@ -1,4 +1,4 @@
-const { getFortunes, addFortune } = require('../dbFortune')
+const { getFortunes, addFortune, delFortune } = require('../dbFortune')
 
 const knex = require('knex')
 const config = require('../knexfile').test
@@ -26,6 +26,18 @@ describe('addFortune', () => {
       .then((fortune) => {
         expect(fortune).toHaveLength(4)
         expect(fortune[3].fortune).toBe('your test will work')
+      })
+  })
+})
+
+describe('delFortune', () => {
+  test('deletes a fortune from the table', () => {
+    return delFortune(1, testDb)
+      .then(() => {
+        return testDb('fortune').select()
+      })
+      .then((fortune) => {
+        expect(fortune).toHaveLength(2)
       })
   })
 })
