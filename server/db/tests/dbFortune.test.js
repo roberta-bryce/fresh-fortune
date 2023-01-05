@@ -1,4 +1,9 @@
-const { getFortunes, addFortune, delFortune } = require('../dbFortune')
+const {
+  getFortunes,
+  addFortune,
+  delFortune,
+  updateFortune,
+} = require('../dbFortune')
 
 const knex = require('knex')
 const config = require('../knexfile').test
@@ -38,6 +43,19 @@ describe('delFortune', () => {
       })
       .then((fortune) => {
         expect(fortune).toHaveLength(2)
+      })
+  })
+})
+
+describe('updateFortune', () => {
+  test('updates the selected fortune within the table', () => {
+    return updateFortune({ id: 1, fortune: 'an updated fortune' }, testDb)
+      .then(() => {
+        return testDb('fortune').select()
+      })
+      .then((fortune) => {
+        expect(fortune).toHaveLength(3)
+        expect(fortune[0].fortune).toBe('an updated fortune')
       })
   })
 })
