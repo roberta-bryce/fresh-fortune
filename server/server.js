@@ -8,6 +8,6 @@ const server = express()
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
-server.use('/api/v1/fortunes', fortuneRoutes)
+server.use('/api/v1/fortune', fortuneRoutes)
 
 module.exports = server
