@@ -42,3 +42,15 @@ describe('POST /api/v1/fortune/add', () => {
       })
   })
 })
+
+describe('DEL /api/v1/fortune/:id', () => {
+  test('deletes a fortune', () => {
+    db.delFortune.mockReturnValue(Promise.resolve(1))
+    return request(server)
+      .delete('/api/v1/fortune/1')
+      .then((res) => {
+        expect(res.status).toBe(200)
+        expect(db.delFortune).toHaveBeenCalledWith(1)
+      })
+  })
+})

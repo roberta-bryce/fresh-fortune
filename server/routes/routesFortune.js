@@ -31,4 +31,15 @@ router.post('/add', (req, res) => {
     })
 })
 
+//DEL /api/v1/fortune/:id
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  db.delFortune(id)
+    .then(() => res.sendStatus(200))
+    .catch((error) => {
+      console.log(error)
+      res.status(500).json({ message: 'Bad luck, something went wrong' })
+    })
+})
+
 module.exports = router
