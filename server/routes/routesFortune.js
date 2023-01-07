@@ -42,4 +42,21 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+//PUT /api/v1/fortune/update
+router.put('/update', (req, res) => {
+  const fortune = req.body
+  const fortuneToUpdate = {
+    id: fortune.id,
+    fortune: fortune.fortune,
+  }
+  db.updateFortune(fortuneToUpdate)
+    .then((fortunes) => {
+      res.json(fortunes)
+    })
+    .catch((error) => {
+      console.log(error)
+      res.status(500).json({ message: 'Bad luck, something went wrong' })
+    })
+})
+
 module.exports = router

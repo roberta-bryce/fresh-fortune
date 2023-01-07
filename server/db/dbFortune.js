@@ -12,8 +12,8 @@ function delFortune(id, db = connection) {
   return db('fortune').where('id', id).delete()
 }
 
-function updateFortune(functionToUpdate, db = connection) {
-  return db('fortune').where('id', functionToUpdate.id).update(functionToUpdate)
+function updateFortune(fortuneToUpdate, db = connection) {
+  return db('fortune').where('id', fortuneToUpdate.id).update(fortuneToUpdate)
 }
 module.exports = {
   getFortunes,

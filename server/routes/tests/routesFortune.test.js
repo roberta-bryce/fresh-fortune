@@ -54,3 +54,23 @@ describe('DEL /api/v1/fortune/:id', () => {
       })
   })
 })
+
+describe('PUT /api/v1/fortune/update', () => {
+  test('updates an existing fortune', () => {
+    db.updateFortune.mockReturnValue(
+      Promise.resolve({ id: 1, fortune: 'your test will work' })
+    )
+    return request(server)
+      .put('/api/v1/fortune/update')
+      .send({
+        id: 1,
+        fortune: 'your test will work',
+      })
+      .then((res) => {
+        expect(res.status).toBe(200)
+        expect(db.updateFortune).toHaveBeenCalled()
+        console.log(res.body)
+        expect(res.body.fortune).toContain('your test will work')
+      })
+  })
+})
