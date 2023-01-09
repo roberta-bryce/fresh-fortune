@@ -3,7 +3,7 @@ export const ADD_FORTUNE = 'ADD_FORTUNE'
 export const DEL_FORTUNE = 'DEL_FORTUNE'
 export const UPD_FORTUNE = 'UPD_FORTUNE'
 
-export function getFortune(fortunes) {
+export function getFortunes(fortunes) {
   return {
     type: GET_FORTUNE,
     payload: fortunes,
