@@ -69,7 +69,6 @@ describe('PUT /api/v1/fortune/update', () => {
       .then((res) => {
         expect(res.status).toBe(200)
         expect(db.updateFortune).toHaveBeenCalled()
-        console.log(res.body)
         expect(res.body.fortune).toContain('your test will work')
       })
   })
