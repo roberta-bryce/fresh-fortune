@@ -1,6 +1,6 @@
 import nock from 'nock'
 
-import { getFortunes, addFortune } from '../apiFortune'
+import { getFortunes, addFortune, delFortune } from '../apiFortune'
 
 describe('getFortunes', () => {
   test('gets all fortunes from api', () => {
@@ -24,6 +24,19 @@ describe('addFortune', () => {
       .reply(200, [{ id: 1, fortune: 'good news' }])
     return addFortune().then((fortune) => {
       expect(fortune).toHaveLength(1)
+      expect(scope.isDone()).toBe(true)
+    })
+  })
+})
+
+describe('delFortune', () => {
+  test('deletes a selected fortune', () => {
+    const scope = nock('http://localhost')
+      .delete('/api/v1/fortune/1')
+      .reply(200, { id: 1 })
+    return delFortune(1).then((deletedFortune) => {
+      console.log(deletedFortune)
+      expect(deletedFortune.id).toBe(1)
       expect(scope.isDone()).toBe(true)
     })
   })
