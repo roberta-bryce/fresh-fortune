@@ -7,3 +7,10 @@ export function getFortunes() {
     return res.body
   })
 }
+
+export function addFortune(newFortune) {
+  return request
+    .post(rootUrl + '/add')
+    .send(newFortune)
+    .then((res) => res.body)
+}
