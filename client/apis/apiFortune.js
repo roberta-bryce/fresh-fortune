@@ -16,3 +16,10 @@ export function addFortune(newFortune) {
 export function delFortune(id) {
   return request.delete(rootUrl + '/' + id).then((res) => res.body)
 }
+
+export function updateFortune(fortuneToUpdate) {
+  return request
+    .put(rootUrl + '/update')
+    .send(fortuneToUpdate)
+    .then((res) => res.body)
+}
