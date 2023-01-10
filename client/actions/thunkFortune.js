@@ -16,3 +16,23 @@ export function getFortunes() {
       .finally(() => dispatch(action.showLoading(false)))
   }
 }
+
+export function addFortune(newFortune) {
+  return (dispatch) => {
+    dispatch(action.showLoading(true))
+    return api
+      .addFortune(newFortune)
+      .then(([fortuneId]) => {
+        dispatch(
+          actionFortune.addFortune({
+            id: fortuneId,
+            fortune: newFortune.fortune,
+          })
+        )
+      })
+      .catch((err) => {
+        dispatch(action.showError(err.message))
+      })
+      .finally(() => dispatch(action.showLoading(false)))
+  }
+}
