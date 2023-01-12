@@ -112,3 +112,37 @@ describe('delFortune', () => {
       })
   })
 })
+
+describe('updateFortune', () => {
+  test('dispatches showLoading when pending', () => {
+    api.updateFortune.mockReturnValue(Promise.resolve(mockFortune))
+    const thunkFn = thunk.updateFortune()
+    return thunkFn(fakeDispatch).then(() => {
+      const fakeDispatchLoading = fakeDispatch.mock.calls[0][0]
+      expect(fakeDispatchLoading.type).toBe('SHOW_LOADING')
+    })
+  })
+  test('dispatches updateFortune simple action', () => {
+    api.updateFortune.mockReturnValue(Promise.resolve(mockFortune))
+    const thunkFn = thunk.updateFortune({
+      id: 1,
+      fortune: 'yeah this thunk works',
+    })
+    return thunkFn(fakeDispatch).then(() => {
+      const fakeDispatchSuccess = fakeDispatch.mock.calls[1][0]
+      expect(fakeDispatchSuccess.type).toBe(action.UPD_FORTUNE)
+    })
+  })
+  test('dispatches showError when fn fails', () => {
+    api.updateFortune.mockImplementation(() =>
+      Promise.reject(new Error('an error happened!'))
+    )
+    return thunk
+      .updateFortune()(fakeDispatch)
+      .then(() => {
+        const fakeDispatchError = fakeDispatch.mock.calls[1][0]
+        expect(fakeDispatchError.type).toBe('SHOW_ERROR')
+        expect(fakeDispatchError.payload).toBe('an error happened!')
+      })
+  })
+})

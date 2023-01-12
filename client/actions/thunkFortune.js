@@ -51,3 +51,18 @@ export function delFortune(id) {
       .finally(() => dispatch(action.showLoading(false)))
   }
 }
+
+export function updateFortune(fortuneToUpdate) {
+  return (dispatch) => {
+    dispatch(action.showLoading(true))
+    return api
+      .updateFortune(fortuneToUpdate)
+      .then(() => {
+        dispatch(actionFortune.updateFortune(fortuneToUpdate))
+      })
+      .catch((err) => {
+        dispatch(action.showError(err.message))
+      })
+      .finally(() => dispatch(action.showLoading(false)))
+  }
+}
