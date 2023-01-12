@@ -36,3 +36,18 @@ export function addFortune(newFortune) {
       .finally(() => dispatch(action.showLoading(false)))
   }
 }
+
+export function delFortune(id) {
+  return (dispatch) => {
+    dispatch(action.showLoading(true))
+    return api
+      .delFortune(id)
+      .then(() => {
+        dispatch(actionFortune.delFortune(id))
+      })
+      .catch((err) => {
+        dispatch(action.showError(err.message))
+      })
+      .finally(() => dispatch(action.showLoading(false)))
+  }
+}
