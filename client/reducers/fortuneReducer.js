@@ -26,6 +26,34 @@ function fortuneReducer(state = initialState, action) {
         ...state,
         loading: payload,
       }
+    case GET_FORTUNE:
+      return {
+        ...state,
+        fortunes: payload,
+      }
+    case ADD_FORTUNE:
+      return {
+        ...state,
+        fortunes: [...state.fortunes, payload],
+      }
+    case DEL_FORTUNE:
+      return {
+        ...state,
+        fortunes: [
+          ...state.fortunes.filter((fortune) => fortune.id !== payload),
+        ],
+      }
+    case UPD_FORTUNE:
+      return {
+        ...state,
+        fortunes: state.fortunes.map((fortune) => {
+          if (fortune.id == payload.id) {
+            return payload
+          } else {
+            return fortune
+          }
+        }),
+      }
     default:
       return state
   }
