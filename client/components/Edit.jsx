@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Update from './Update.jsx'
 import { getFortunes, delFortune } from '../actions/thunkFortune'
 
 function Edit() {
@@ -23,6 +24,7 @@ function Edit() {
             <li key={fortunes.id}>
               {fortunes?.fortune}
               <button onClick={() => handleDelete(fortunes.id)}>del</button>
+              <Update id={fortunes.id} />
             </li>
           ))}
         </ul>
