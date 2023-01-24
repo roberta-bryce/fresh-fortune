@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Update from './Update.jsx'
+import Add from './Add.jsx'
 import { getFortunes, delFortune } from '../actions/thunkFortune'
 
 function Edit() {
@@ -28,6 +29,7 @@ function Edit() {
             </li>
           ))}
         </ul>
+        <Add />
       </div>
     </>
   )
