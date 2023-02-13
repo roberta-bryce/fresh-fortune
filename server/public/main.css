@@ -20,6 +20,17 @@ body{
 
 button {
   cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: 'Koulen', cursive;
+  font-size: 1.1em;
+  color: #efdbc0;
+}
+a:link{
+  text-decoration: none;
+}
+a:visited {
+  color: #efdbc0;
 }
 
 .cookie {
@@ -27,26 +38,37 @@ button {
   position: relative;
   width: 10em;
   height: 7em;
-  background: transparent;
   margin: 0;
 }
 
-.cookie:focus {
-	outline: transparent;
-}
-
 .cookieHalf {
+  position: absolute;
   width: 4em;
 	height: 4em;
   background: #ad1112;
 }
 
 .L {
-  clip-path: polygon(38% 0, 40% 54%, 82% 100%, 18% 100%, 0 54%);
-  -webkit-clip-path: polygon(38% 0, 40% 54%, 82% 100%, 18% 100%, 0 54%);
+  clip-path: polygon(45% 16%, 40% 54%, 82% 100%, 18% 100%, 0 54%);
+  -webkit-clip-path: polygon(45% 16%, 40% 54%, 82% 100%, 18% 100%, 0 54%);
 }
 
 .R {
-  clip-path: polygon(62% 0, 60% 54%, 18% 100%, 82% 100%, 100% 54%);
-  -webkit-clip-path: polygon(62% 0, 60% 54%, 18% 100%, 82% 100%, 100% 54%);
+  clip-path: polygon(55% 16%, 60% 54%, 18% 100%, 82% 100%, 100% 54%);
+  -webkit-clip-path: polygon(55% 16%, 60% 54%, 18% 100%, 82% 100%, 100% 54%);
 }
+
+.fortuneText {
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ad1112;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1em;
+}
+
+/* 
+make button and cookie divs absolute
+gradient effect in buttons? experiment with color or bg
+open on click and transform to either side of .fortuneText
+Maybe loading effect? require several clicks? Have it effect the heading? red underline to make legible and emphasis theme?
+ */
