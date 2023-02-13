@@ -1,5 +1,11 @@
+/* 
+Primary color: #ead1b4
+Secondary color: #efdbc0
+Tertiary color: #ad1112
+ */
+
 body{
-  background-color: rgb(234, 208, 165);
+  background-color: #ead1b4;
 }
 
 .freshHeading {
@@ -7,7 +13,40 @@ body{
   justify-content: center;
   padding: 0;
   margin: 0;
-  color: white;
+  color: #efdbc0;
   font-family: 'Koulen', cursive;
   font-size: 8em;
+}
+
+button {
+  cursor: pointer;
+}
+
+.cookie {
+  display: block;
+  position: relative;
+  width: 10em;
+  height: 7em;
+  background: transparent;
+  margin: 0;
+}
+
+.cookie:focus {
+	outline: transparent;
+}
+
+.cookieHalf {
+  width: 4em;
+	height: 4em;
+  background: #ad1112;
+}
+
+.L {
+  clip-path: polygon(38% 0, 40% 54%, 82% 100%, 18% 100%, 0 54%);
+  -webkit-clip-path: polygon(38% 0, 40% 54%, 82% 100%, 18% 100%, 0 54%);
+}
+
+.R {
+  clip-path: polygon(62% 0, 60% 54%, 18% 100%, 82% 100%, 100% 54%);
+  -webkit-clip-path: polygon(62% 0, 60% 54%, 18% 100%, 82% 100%, 100% 54%);
 }

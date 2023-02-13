@@ -26,10 +26,11 @@ function Cookie() {
   }, [fortunes])
 
   return (
-    <div>
-      <span>{fortunes[fortuneIndex]?.fortune}</span>
-      <button onClick={randomOnClick}>Get a Fresh Fortune</button>
-    </div>
+    <button className="cookie" onClick={randomOnClick}>
+      <span className="fortuneText">{fortunes[fortuneIndex]?.fortune}</span>
+      <div className="cookieHalf L"></div>
+      <div className="cookieHalf R"></div>
+    </button>
   )
 }
 
