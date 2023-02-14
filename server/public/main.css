@@ -72,8 +72,12 @@ a:visited {
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
 /* 
-make button and cookie divs absolute
+make button and cookie divs centered -- done!
 gradient effect in buttons? experiment with color or bg
 open on click and transform to either side of .fortuneText
 Maybe loading effect? require several clicks? Have it effect the heading? red underline to make legible and emphasis theme?

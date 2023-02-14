@@ -8,9 +8,10 @@ function Cookie() {
   const [fortuneIndex, setFortuneIndex] = useState(
     getRandomInt(fortunes.length)
   )
+  const [isActive, setActive] = useState('false')
 
   function getRandomInt() {
-    return Math.floor(Math.random() * 3)
+    return Math.floor(Math.random() * fortunes.length)
   }
 
   useEffect(() => {
@@ -19,6 +20,7 @@ function Cookie() {
 
   function randomOnClick() {
     setFortuneIndex(getRandomInt(fortunes.length))
+    setActive(!isActive)
   }
 
   useEffect(() => {
@@ -27,7 +29,9 @@ function Cookie() {
 
   return (
     <button className="cookie" onClick={randomOnClick}>
-      <span className="fortuneText">{fortunes[fortuneIndex]?.fortune}</span>
+      <span className={isActive ? 'hidden' : 'fortuneText'}>
+        {fortunes[fortuneIndex]?.fortune}
+      </span>
       <div className="cookieHalf L"></div>
       <div className="cookieHalf R"></div>
     </button>
