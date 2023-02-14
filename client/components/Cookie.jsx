@@ -29,11 +29,13 @@ function Cookie() {
 
   return (
     <button className="cookie" onClick={randomOnClick}>
-      <span className={isActive ? 'hidden' : 'fortuneText'}>
+      <span className={isActive ? 'hiddenText' : 'fortuneText'}>
         {fortunes[fortuneIndex]?.fortune}
       </span>
-      <div className="cookieHalf L"></div>
-      <div className="cookieHalf R"></div>
+      <div className={`cookieHalf L ${isActive ? '' : 'openCookieLeft'}`}></div>
+      <div
+        className={`cookieHalf R ${isActive ? '' : 'openCookieRight'}`}
+      ></div>
     </button>
   )
 }

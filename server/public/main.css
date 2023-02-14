@@ -51,6 +51,19 @@ a:visited {
   width: 4em;
 	height: 4em;
   background: #ad1112;
+  animation: arrival 0.3s linear
+}
+
+@keyframes arrival {
+  from {
+		transform: scale(0);
+	}
+	75% {
+		transform: scale(1.1);
+	}
+	to {
+		transform: scale(1);
+	}
 }
 
 .L {
@@ -63,6 +76,32 @@ a:visited {
   -webkit-clip-path: polygon(55% 16%, 60% 54%, 18% 100%, 82% 100%, 100% 54%);
 }
 
+.openCookieLeft {
+  animation: openLeft 0.7s ease-in forwards;
+}
+
+@keyframes openLeft {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-14em) rotate(-10deg);
+	}
+}
+
+.openCookieRight {
+  animation: openRight 0.7s ease-in forwards;
+}
+
+@keyframes openRight {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(14em) rotate(10deg);
+	}
+}
+
 .fortuneText {
   overflow: hidden;
   white-space: nowrap;
@@ -70,9 +109,19 @@ a:visited {
   font-family: 'Nunito', sans-serif;
   font-size: 1.1em;
   text-align: center;
+  animation: revealText 0.7s ease-in forwards;
 }
 
-.hidden {
+@keyframes revealText {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+.hiddenText {
   display: none;
 }
 
