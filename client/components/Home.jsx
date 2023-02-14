@@ -7,12 +7,14 @@ function Home() {
     <>
       <div>
         <h1 className="freshHeading">Fresh Fortune</h1>
-        <div>
+        <div className="cookieContainer">
           <Cookie />
         </div>
-        <button>
-          <Link to="/edit">Edit</Link>
-        </button>
+        <div className="editContainer">
+          <button>
+            <Link to="/edit">Edit</Link>
+          </button>
+        </div>
       </div>
     </>
   )
