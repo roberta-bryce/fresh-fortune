@@ -11,7 +11,7 @@ function Home() {
           <Cookie />
         </div>
         <div className="editContainer">
-          <button>
+          <button className="mainButton">
             <Link to="/edit">Edit</Link>
           </button>
         </div>

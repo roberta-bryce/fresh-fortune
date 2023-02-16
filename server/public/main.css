@@ -1,7 +1,6 @@
 /* 
-Primary color: #ead1b4
-Secondary color: #efdbc0
-Tertiary color: #ad1112
+Primary color: #ead1b4 / rgb(173, 17, 18)
+Secondary color: #ad1112
  */
 
 body{
@@ -14,6 +13,7 @@ body{
   padding: 0;
   margin: 0;
   color: #efdbc0;
+  text-shadow: 2px 8px 9px #dacbb8;
   font-family: 'Koulen', cursive;
   font-size: 8em;
 }
@@ -24,13 +24,24 @@ button {
   border: none;
   font-family: 'Koulen', cursive;
   font-size: 1.1em;
-  color: #efdbc0;
 }
-a:link{
-  text-decoration: none;
+
+.mainButton {
+  width: 65px;
+  color: #dacbb8;
+  background-color: #efdbc0;
+  border-radius: 2px;
+  box-shadow: 10px 15px 40px #dacbb8;
 }
-a:visited {
-  color: #efdbc0;
+
+.mainButton:hover {
+  background-color: rgba(173, 17, 18, 0.1);
+  color:#ad1112
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .cookieContainer, .editContainer{
@@ -128,6 +139,6 @@ a:visited {
 /* 
 make button and cookie divs centered -- done!
 gradient effect in buttons? experiment with color or bg
-open on click and transform to either side of .fortuneText
+open on click and transform to either side of .fortuneText -- done!
 Maybe loading effect? require several clicks? Have it effect the heading? red underline to make legible and emphasis theme?
  */

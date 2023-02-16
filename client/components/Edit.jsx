@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Update from './Update.jsx'
 import Add from './Add.jsx'
@@ -18,7 +19,6 @@ function Edit() {
 
   return (
     <>
-      <h2>Edit</h2>
       <div>
         <ul>
           {fortunes.map((fortunes) => (
@@ -30,6 +30,11 @@ function Edit() {
           ))}
         </ul>
         <Add />
+      </div>
+      <div className="editContainer">
+        <button className="mainButton">
+          <Link to="/">Home</Link>
+        </button>
       </div>
     </>
   )
