@@ -6,11 +6,11 @@ function Home() {
   return (
     <>
       <div>
-        <h1 className="freshHeading">Fresh Fortune</h1>
+        <h1>Fresh Fortune</h1>
         <div className="cookieContainer">
           <Cookie />
         </div>
-        <div className="editContainer">
+        <div className="buttonContainer">
           <button className="mainButton">
             <Link to="/edit">Edit</Link>
           </button>

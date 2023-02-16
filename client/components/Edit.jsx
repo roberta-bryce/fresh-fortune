@@ -19,19 +19,21 @@ function Edit() {
 
   return (
     <>
-      <div>
-        <ul>
-          {fortunes.map((fortunes) => (
-            <li key={fortunes.id}>
-              {fortunes?.fortune}
-              <button onClick={() => handleDelete(fortunes.id)}>del</button>
-              <Update id={fortunes.id} />
-            </li>
-          ))}
-        </ul>
+      <div className="editContainer">
+        <div className="fortuneList">
+          <ul>
+            {fortunes.map((fortunes) => (
+              <li key={fortunes.id}>
+                {fortunes?.fortune}
+                <button onClick={() => handleDelete(fortunes.id)}>del</button>
+                <Update id={fortunes.id} />
+              </li>
+            ))}
+          </ul>
+        </div>
         <Add />
       </div>
-      <div className="editContainer">
+      <div className="buttonContainer">
         <button className="mainButton">
           <Link to="/">Home</Link>
         </button>

@@ -22,7 +22,7 @@ function Add() {
   }
 
   return (
-    <form>
+    <form className="addFortune">
       <label htmlFor="fortune">Create a new Fortune:</label>
       <input
         name="fortune"
