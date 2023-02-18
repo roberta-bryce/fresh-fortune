@@ -22,15 +22,19 @@ function Add() {
   }
 
   return (
-    <form className="addFortune">
-      <label htmlFor="fortune">Create a new Fortune:</label>
-      <input
-        name="fortune"
-        value={localFortune.fortune}
-        onChange={handleChange}
-      />
-      <button onClick={handleAdd}>Submit</button>
-    </form>
+    <>
+      <span className="createSpan">Create a Fortune:</span>
+      <form className="addFortune">
+        <input
+          name="fortune"
+          value={localFortune.fortune}
+          onChange={handleChange}
+        />
+        <button className="onClickButton" onClick={handleAdd}>
+          &#10004;
+        </button>
+      </form>
+    </>
   )
 }
 

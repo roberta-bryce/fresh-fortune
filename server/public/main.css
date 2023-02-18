@@ -7,7 +7,7 @@ body{
   background-color: #ead1b4;
 }
 
-.cookieContainer, .buttonContainer, .fortuneList, h1{
+.cookieContainer, .buttonContainer, h1{
   display: flex;
   justify-content: center;
 }
@@ -35,6 +35,8 @@ button {
   background-color: #efdbc0;
   border-radius: 2px;
   box-shadow: 10px 15px 40px #dacbb8;
+  position: fixed;
+  bottom: 5vh;
 }
 
 .mainButton:hover {
@@ -135,18 +137,25 @@ a {
 }
 
 .editContainer {
-  overflow: hidden;
-  white-space: nowrap;
+  width: 32.5vw;
+  height: 80vh;
+  margin: auto;
   color: #ad1112;
   font-family: 'Nunito', sans-serif;
   font-size: 1.1em;
+  border: 2px solid #ad1112;
 }
 
 .fortuneList {
-  margin: 20px;
+  margin: 0 10px 30px 0;
+  padding: 0;
   height: 65vh;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+ul {
+  list-style-type: square;
 }
 
 .addFortune {
@@ -154,9 +163,25 @@ a {
   justify-content: center;
 }
 
+.createSpan {
+  padding: 2px 2px 2px 35px;
+  margin: 2px;
+}
+
+input {
+  width: 25vw;
+  height: 3vh;
+  border: 2px solid #ad1112;
+  border-radius: 2px;
+  background-color: rgba(173, 17, 18, 0.1);
+  padding: 2px 2px 2px 0;
+  margin: 2px;
+}
+
+.onClickButton {
+  color:#ad1112;
+}
+
 /* 
-make button and cookie divs centered -- done!
-gradient effect in buttons? experiment with color or bg
-open on click and transform to either side of .fortuneText -- done!
 Maybe loading effect? require several clicks? Have it effect the heading? red underline to make legible and emphasis theme?
  */

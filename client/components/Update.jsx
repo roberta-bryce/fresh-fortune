@@ -30,7 +30,9 @@ function Update(props) {
           value={localFortune.fortune}
           onChange={handleChange}
         />
-        <button onClick={handleUpdate}>Update</button>
+        <button className="onClickButton" onClick={handleUpdate}>
+          &#10004;
+        </button>
       </form>
     </div>
   )

@@ -25,7 +25,12 @@ function Edit() {
             {fortunes.map((fortunes) => (
               <li key={fortunes.id}>
                 {fortunes?.fortune}
-                <button onClick={() => handleDelete(fortunes.id)}>del</button>
+                <button
+                  className="onClickButton"
+                  onClick={() => handleDelete(fortunes.id)}
+                >
+                  &#10006;
+                </button>
                 <Update id={fortunes.id} />
               </li>
             ))}
