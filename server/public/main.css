@@ -182,6 +182,19 @@ input {
   color:#ad1112;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #efdbc0;
+  box-shadow: inset 0 0 5px #dacbb8; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #dacbb8;
+}
+
 /* 
 Maybe loading effect? require several clicks? Have it effect the heading? red underline to make legible and emphasis theme?
  */
